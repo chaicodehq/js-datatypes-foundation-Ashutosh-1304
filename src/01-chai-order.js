@@ -47,20 +47,52 @@
  */
 export function getChaiOrderLength(order) {
   // Your code here
+  if(typeof order === "string")
+  {
+    return order.trim().length;
+  }
+  else return -1;
 }
 
 export function shoutChaiOrder(order) {
   // Your code here
+  if(typeof order === "string")
+  {
+    order=order.trim();
+    if(order.length>0) return order.toUpperCase();
+    else return "";
+  }
+  else return "";
 }
 
 export function whisperChaiOrder(order) {
   // Your code here
+  if(typeof order === "string")
+  {
+    order=order.trim();
+    if(order.length>0) return order.toLowerCase();
+    else return "";
+  }
+  else return "";
 }
 
 export function hasSpecialIngredient(order, ingredient) {
   // Your code here
+  if(typeof order === "string" && typeof ingredient === "string")
+  {
+    order=order.toLowerCase();ingredient=ingredient.toLowerCase();
+    return order.includes(ingredient)
+  }
+  else return false;
 }
 
 export function getFirstAndLastChar(order) {
   // Your code here
+  if(typeof order === "string")
+  {
+    order=order.trim();
+    if(order.length>0) return {first : order.charAt(0),last: order.at(-1)};
+    else return null;
+  }
+  else return null;
 }
